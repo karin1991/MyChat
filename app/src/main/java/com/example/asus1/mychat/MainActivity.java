@@ -1,5 +1,6 @@
 package com.example.asus1.mychat;
 
+import android.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Context;
@@ -14,6 +15,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -33,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+
+
         recyclerView = findViewById(R.id.recycler_view);
 
         mAdapter = new ChatAdapter(chatList);
@@ -45,16 +50,34 @@ public class MainActivity extends AppCompatActivity {
         input = findViewById(R.id.editText);
 
 
+
+
+
+
+
         senderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                MessageFragment messageFragment = new MessageFragment();
                 ChatRow msg = new ChatRow(input.getText().toString(), "Karin" , System.currentTimeMillis());
                 mAdapter.addMessage(msg);
                 input.setText("");
+
             }
         });
 
+
+    }
+
+    public void msgClick(View view)
+    {
+
+        MessageFragment messageFragment = new MessageFragment();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.activity_main_frame, messageFragment)
+                .commit();
 
     }
 

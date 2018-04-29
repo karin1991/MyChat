@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-import java.sql.Time;
-import java.util.Calendar;
+
+
 import java.util.List;
 
 
@@ -53,6 +53,8 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyViewHolder> 
                 .inflate(R.layout.chat_list_row, parent, false);
 
         return new MyViewHolder(itemView);
+
+
     }
 
     @Override
@@ -69,4 +71,11 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyViewHolder> 
     public int getItemCount() {
         return chatList.size();
     }
+
+
+
+
+
+
+
 }
