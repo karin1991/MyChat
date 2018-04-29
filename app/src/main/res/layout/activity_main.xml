@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context="com.example.asus1.mychat.MainActivity">
+    tools:context="com.example.asus1.mychat.MainActivity"
+    android:id="@+id/main">
 
 
     <android.support.v7.widget.RecyclerView
@@ -38,8 +39,18 @@
         android:layout_alignTop="@+id/editText"
         android:layout_marginBottom="20dp"
         android:layout_marginRight="20dp"
-        android:onClick="setChat"
+        android:onClick="@setChat"
         android:text="send" />
+
+    <FrameLayout
+        android:id="@+id/activity_main_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
 
 
 </RelativeLayout>
+
+
+
